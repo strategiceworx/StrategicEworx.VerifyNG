@@ -51,6 +51,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Data\AppDataContext.cs" />
+    <Compile Include="Migrations\201712151656552_v1.cs" />
+    <Compile Include="Migrations\201712151656552_v1.Designer.cs">
+      <DependentUpon>201712151656552_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +67,11 @@
       <Project>{2ba077f4-84c9-4ba6-a002-b192d4a55c30}</Project>
       <Name>StrategicEworx.VerifyNG.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712151656552_v1.resx">
+      <DependentUpon>201712151656552_v1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
