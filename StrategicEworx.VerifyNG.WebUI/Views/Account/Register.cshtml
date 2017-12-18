@@ -14,13 +14,27 @@
                 </div>
             </div>
             <div class="panel-body">
-                @using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-signin", role = "form" }))
+                @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
                     
                         <h4>User</h4>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                   
+                    if (@ViewBag.Message != null)
+                    {
+                            <div class="form-group">
+                                <span class="label label-success">@ViewBag.Message</span>
+                            </div>
+                    }
+                    else
+                    {
+
+                        <div class="form-group">
+                            <span class="label label-success">I got here</span>
+                        </div>
+                    }
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
